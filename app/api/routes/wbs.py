@@ -92,7 +92,7 @@ async def generate_wbs(
     "/generate-spec",
     response_model=MarkdownSpecResponse,
     status_code=status.HTTP_200_OK,
-    summary="📝 프로젝트 명세서 생성 (마크다운)",
+    summary="프로젝트 명세서 생성 (마크다운)",
     description="""
     프로젝트 정보를 마크다운 형식의 상세 명세서로 변환합니다.
     
@@ -141,7 +141,7 @@ async def generate_markdown_spec(
     "/generate-from-spec",
     response_model=WBSGenerateResponse,
     status_code=status.HTTP_200_OK,
-    summary="🎯 마크다운 명세서로부터 WBS 생성",
+    summary="마크다운 명세서로부터 WBS 생성",
     description="""
     마크다운 형식의 프로젝트 명세서를 분석하여 WBS를 생성합니다.
     
@@ -159,15 +159,15 @@ async def generate_wbs_from_spec(
         example={
             "markdown_spec": """# 프로젝트 명세서: FlowPlan 앱 개발
 
-## 📋 프로젝트 개요
+## 프로젝트 개요
 - **프로젝트명**: FlowPlan 앱
 - **기간**: 2024-01-01 ~ 2024-01-30 (30일)
 - **팀 구성**: 5명 (PM 1, 개발자 3, 디자이너 1)
 
-## 🎯 프로젝트 목적
+## 프로젝트 목적
 일정 관리 및 협업을 위한 모바일 앱 개발
 
-## ✨ 핵심 기능
+## 핵심 기능
 ### 1. 간트차트
 - 드래그앤드롭으로 일정 조정
 - 마일스톤 표시
@@ -202,7 +202,7 @@ async def generate_wbs_from_spec(
 @router.post(
     "/generate-from-spec/flat",
     status_code=status.HTTP_200_OK,
-    summary="🗂️ 마크다운으로부터 WBS 생성 (Flat 구조 - 스프링 DB용)",
+    summary="마크다운으로부터 WBS 생성 (Flat 구조 - 스프링 DB용)",
     description="""
     마크다운 명세서로부터 WBS를 생성하고, **스프링 서버 DB 저장용 Flat 구조**로 변환합니다.
     
